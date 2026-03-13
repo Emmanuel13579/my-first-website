@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Emmanuel's Website</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Styling -->
+  <style>
+    .navbar a {
+        text-decoration: none;
+        color: #1e90ff;
+        margin:0 10px;
+        font-weight: bold;
+
+    }
+    /* General Body */
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 20px;
+    }
+    .dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .header,
+.dark-mode .image-section,
+.dark-mode .skills-section,
+.dark-mode .goals-section,
+.dark-mode .button-section,
+.dark-mode .section {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+    /* Headings and Paragraphs */
+    h1 {
+      color: #1e90ff;
+    }
+
+    h2 {
+      color: #333333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555555;
+    }
+
+    /* Images */
+    img {
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    /* Lists */
+    ul,
+    ol {
+      text-align: left;
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    /* Sections Layout */
+    .header,
+    .image-section,
+    .skills-section,
+    .goals-section,
+    .button-section {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-section img {
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+  width: 100%;        /* makes it responsive */
+  max-width: 400px;   /* limits the width so it doesn’t get too big */
+  height: auto;       /* keeps the image proportion correct */
+}
+    
+
+    /* Custom Section Colors */
+    .header {
+      background-color: #1e90ff;
+      color: white;
+    }
+
+    .image-section {
+      background-color: #ffe4b5;
+    }
+
+    .skills-section {
+      background-color: #98fb98;
+    }
+
+    .goals-section {
+      background-color: #ffb6c1;
+    }
+
+    .button-section {
+      background-color: #f5f5f5;
+    }
+
+    /* Button Styling */
+    button {
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #104e8b;
+      transform: scale(1.1);
+    }
+    /* Responsive Design */
+@media only screen and (max-width: 600px) {
+  .header, .image-section, .skills-section, .goals-section, .button-section, .section {
+    width: 95%;
+    padding: 15px;
+  }
+
+  ul, ol {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 10px 0;
+  }
+  #skillsList li:hover, #goalsList li:hover {
+  color: white;
+  background-color: #1e90ff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">.Contact</a>
+    </div>
+
+    <button id="darkModeBtn">Toggle Dark Mode</button>
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Emmanuel's Website</h1>
+    <p id="intro">I am learning web development.</p>
+  </div>
+
+  <!-- Image Section -->
+  <div class="image-section">
+    <img src="https://imageio.forbes.com/specials-images/imageserve/647f8116232e9b434557b386/0x0.jpg?format=jpg&crop=5272,2964,x0,y272,safe&height=600&width=1200&fit=bounds">
+    <a href="https://google.com">Visit Google</a>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills-section">
+    <h2>My Skills</h2>
+    <ul id="skillsList">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript (learning)</li>
+    </ul>
+  </div>
+
+  <!-- Goals Section -->
+  <div class="goals-section">
+    <h2>My Goals</h2>
+    <ol id="goalsList">
+      <li>Learn Web Development</li>
+      <li>Build Websites for Clients</li>
+      <li>Make My First Money Coding</li>
+    </ol>
+  </div>
+
+  <!-- Button Section -->
+  <div class="button-section">
+    <button id= "myButton">Click Me!</button>\
+    <button id="changeTextButton">Change my paragraph</button>
+  </div>
+<!-- JavaScript -->
+<script>
+    document.getElementById("darkModeBtn").onclick = function() {
+  document.body.classList.toggle("dark-mode");
+};
+  // This will show a message ehen the page loads
+  alert("Welcome to Emmanuel's Website!");
+  // Button click event
+document.getElementById("myButton").onclick = function() {
+  alert("You clicked the button! Great job learning JavaScript.");
+};
+
+  
+  // Button click to change paragraph
+  document.getElementById("changeTextButton").onclick = function() {
+    document.getElementById("intro").innerText = "I am now making interactive websites with JavaScript!";
+  };
+  // Make Skills List interactive
+let skills = document.querySelectorAll("#skillsList li");
+skills.forEach(function(skill) {
+  skill.onclick = function() {
+    alert("Skill clicked: " + skill.innerText);
+  };
+});
+
+// Make Goals List interactive
+let goals = document.querySelectorAll("#goalsList li");
+goals.forEach(function(goal) {
+  goal.onclick = function() {
+    alert("Goal clicked: " + goal.innerText);
+  };
+});
+
+
+</script>
+
+</body>
+
+</html>
