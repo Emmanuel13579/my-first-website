@@ -167,7 +167,29 @@
 }
 
 }
+html {
+  scroll-behavior: smooth;
+}
+.slider img {
+  width: 100%;
+  height: auto;
+  display: none; /* JS will show the first slide */
+  border-radius: 10px;
+  margin-top: 20px;
+}
 
+
+.section ul li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.project{
+background:#ffffff;
+padding:15px;
+margin:10px 0;
+border-radius:8px;
+box-shadow:0 3px 6px rgba(0,0,0,0.1);
+}
 
 </style>
 </head>
@@ -175,14 +197,15 @@
 <body>
     <!--Navigation bar-->
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#goals">Goals</a>
         <a href="contact.html">.Contact</a>
     </div>
 
     <button id="darkModeBtn">Toggle Dark Mode</button>
   <!-- Header Section -->
-  <div class="header">
+  <div class="header" id="home">...</div>
     <h1>Emmanuel's Website</h1>
     <p id="intro">I am learning web development.</p>
   </div>
@@ -194,7 +217,7 @@
   </div>
 
   <!-- Skills Section -->
-  <div class="skills-section">
+  <div class="skills-section" id=""skills>...</div>
     <h2>My Skills</h2>
     <ul id="skillsList">
       <li>HTML</li>
@@ -202,9 +225,23 @@
       <li>JavaScript (learning)</li>
     </ul>
   </div>
+  <!--Image Slider Selection-->
+  <div class="slider">
+  <img src="https://via.placeholder.com/600x300?text=Project+1" alt="Project 1">
+  <img src="https://via.placeholder.com/600x300?text=Project+2" alt="Project 2">
+  <img src="https://via.placeholder.com/600x300?text=Project+3" alt="Project 3">
+</div>
+<div class="section">
+  <h2>My Services</h2>
+  <ul>
+    <li>Basic Website: $30</li>
+    <li>Portfolio Website: $50</li>
+    <li>Interactive Website: $80</li>
+  </ul>
+</div>
 
   <!-- Goals Section -->
-  <div class="goals-section">
+  <div class="goals-section" id="goals">...</div>
     <h2>My Goals</h2>
     <ol id="goalsList">
       <li>Learn Web Development</li>
@@ -212,7 +249,28 @@
       <li>Make My First Money Coding</li>
     </ol>
   </div>
+<div class="section">
+<h2>My Projects</h2>
 
+<div class="project">
+<h3>Personal Portfolio Website</h3>
+<p>This is my first website built using HTML, CSS, and JavaScript.</p>
+
+<a href=" https://emmanuel13579.github.io/my-first-website/"
+target="_blank">View Live Project</a>
+</div>
+
+<div class="project">
+<h3>Interactive JavaScript Website</h3>
+<p>A website with dark mode, interactive lists, and dynamic buttons.</p>
+</div>
+
+<div class="project">
+<h3>Contact Form Website</h3>
+<p>A website where users can send messages through a form.</p>
+</div>
+
+</div>
   <!-- Button Section -->
   <div class="button-section">
     <button id= "myButton">Click Me!</button>\
@@ -250,6 +308,21 @@ goals.forEach(function(goal) {
     alert("Goal clicked: " + goal.innerText);
   };
 });
+let slides = document.querySelectorAll(".slider img");
+let currentSlide = 0;
+
+function showSlide(index){
+  slides.forEach((slide,i)=>{
+    slide.style.display = i === index ? "block" : "none";
+  });
+}
+
+showSlide(currentSlide);
+
+setInterval(()=>{
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 3000);
 
 
 </script>
