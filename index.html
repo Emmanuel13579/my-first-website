@@ -3,6 +3,7 @@
 
 <head>
   <title>Emmanuel's Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -16,6 +17,9 @@
         font-weight: bold;
 
     }
+    body {
+  font-family: 'Poppins', sans-serif;
+}
     /* General Body */
     body {
       font-family: 'Roboto', Arial, sans-serif;
@@ -190,7 +194,11 @@ margin:10px 0;
 border-radius:8px;
 box-shadow:0 3px 6px rgba(0,0,0,0.1);
 }
-
+.project:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 </style>
 </head>
 
@@ -202,6 +210,12 @@ box-shadow:0 3px 6px rgba(0,0,0,0.1);
       <a href="#goals">Goals</a>
         <a href="contact.html">.Contact</a>
     </div>
+
+<div class="hero">
+  <h1>Hi, I'm Emmanuel</h1>
+  <p>Front-End Developer | Building Interactive Websites</p>
+  <a href="contact.html" class="hero-btn">Hire Me</a>
+</div>
 
     <button id="darkModeBtn">Toggle Dark Mode</button>
   <!-- Header Section -->
